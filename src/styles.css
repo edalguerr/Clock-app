@@ -3,7 +3,11 @@
 
 :root {
     --font-family: 'Inter', sans-serif;
-    --text-color: white;
+    --text-color: white;    
+}
+
+body {
+    margin: 0;
     font-family:  var(--font-family);
     color: var(--text-color);
 }

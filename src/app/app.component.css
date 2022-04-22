@@ -1,0 +1,98 @@
+.main-container {    
+    display: grid;
+    box-sizing: border-box;
+    width: 100vw;    
+    height: 100vh;
+    padding: 3% 10% 5%;    
+    grid-template: 1fr 1fr/ 70% 30%;
+    position: absolute;
+}
+
+.bg-time {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bg-time::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.bg-daytime {
+    background: url('../assets/desktop/bg-image-daytime.jpg') center/cover no-repeat;
+}
+
+.bg-nighttime {
+    background: url('../assets/desktop/bg-image-nighttime.jpg') center/cover no-repeat;;
+}
+
+
+.datetime-component {
+    grid-row: 2;
+}
+
+
+.button-more {
+    width: 150px;
+    height: 60px;
+    grid-row: 2;    
+    align-self: end;
+    justify-self: end;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;    
+    justify-content: space-evenly;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    border-radius: 80px;
+    color: #8a8a8a;    
+    background-color: #fff;
+}
+
+.button-more:hover {
+    cursor: pointer;
+}
+
+.button-more__icon {
+    height: 70%;
+    transform: rotateZ(180deg);
+}
+
+
+.time-zone {
+    
+}
+
+
+@media screen and (max-width: 1200px) {
+    .bg-daytime {
+        background: url('../assets/tablet/bg-image-daytime.jpg') center/cover no-repeat;
+    }
+
+    .bg-nighttime {
+        background: url('../assets/tablet/bg-image-nighttime.jpg') center/cover no-repeat;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .bg-daytime {
+        background: url('../assets/mobile/bg-image-daytime.jpg') center/cover no-repeat;
+    }
+
+    .bg-nighttime {
+        background: url('../assets/mobile/bg-image-nighttime.jpg') center/cover no-repeat;
+    }
+}

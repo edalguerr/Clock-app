@@ -1,0 +1,39 @@
+.container-quote {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 65% 5%;
+    column-gap: 3.5rem;
+    align-items: end;
+}
+
+
+.quote {
+    grid-row: 1 / span 3;
+}
+
+.quote__text {
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.8rem;
+    font-family: var(--font-family);
+}
+
+.quote__author {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: var(--font-family);    
+}
+
+
+.refresh-quote {
+    width: fit-content;
+    background: transparent;
+    border: 0;
+}
+
+.refresh-quote:hover {
+    cursor: pointer;
+}
+
+.refresh-quote__icon {
+    width: 15px;
+}
