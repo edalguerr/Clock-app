@@ -1,11 +1,14 @@
-.main-container {    
+.main-container {
     display: grid;
     box-sizing: border-box;
-    width: 100vw;    
-    height: 100vh;
-    padding: 3% 10% 5%;    
+    height: 103vh;
+    padding: 3% 10% 5%;
     grid-template: 1fr 1fr/ 70% 30%;
-    position: absolute;
+    position: fixed;
+}
+
+.main-container::-webkit-scrollbar {
+    display: none;
 }
 
 .bg-time {
@@ -34,7 +37,8 @@
 }
 
 .bg-nighttime {
-    background: url('../assets/desktop/bg-image-nighttime.jpg') center/cover no-repeat;;
+    background: url('../assets/desktop/bg-image-nighttime.jpg') center/cover no-repeat;
+    ;
 }
 
 
@@ -46,18 +50,18 @@
 .button-more {
     width: 150px;
     height: 60px;
-    grid-row: 2;    
+    grid-row: 2;
     align-self: end;
     justify-self: end;
     font-size: 1rem;
     font-weight: 700;
     display: flex;
-    align-items: center;    
+    align-items: center;
     justify-content: space-evenly;
     letter-spacing: 0.25rem;
     text-transform: uppercase;
     border-radius: 80px;
-    color: #8a8a8a;    
+    color: #8a8a8a;
     background-color: #fff;
 }
 
@@ -72,17 +76,35 @@
 
 
 .time-zone {
-    
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 45vh;
+    bottom: -42vh;
 }
 
 
 @media screen and (max-width: 1200px) {
+
+    .main-container {
+        grid-template-columns: 100%;
+    }
+
     .bg-daytime {
         background: url('../assets/tablet/bg-image-daytime.jpg') center/cover no-repeat;
     }
 
     .bg-nighttime {
         background: url('../assets/tablet/bg-image-nighttime.jpg') center/cover no-repeat;
+    }
+
+    .datetime-component {
+        align-self: center;
+    }
+
+    .button-more {
+        grid-row: 3;
+        justify-self: left;
     }
 }
 
@@ -94,5 +116,17 @@
 
     .bg-nighttime {
         background: url('../assets/mobile/bg-image-nighttime.jpg') center/cover no-repeat;
+    }
+
+    .datetime-component {
+        align-self: end;
+        margin-bottom: 30px;
+    }
+
+    .button-more {
+        width: 120px;
+        height: 40px;
+        margin: 20px;
+        font-size: 0.85rem;
     }
 }

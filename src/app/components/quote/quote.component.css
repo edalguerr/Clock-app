@@ -37,3 +37,11 @@
 .refresh-quote__icon {
     width: 15px;
 }
+
+
+@media screen and (max-width: 767px) {
+    .container-quote {
+        grid-template-columns: 90% 5%;
+        column-gap: 1.5rem;
+    }
+}

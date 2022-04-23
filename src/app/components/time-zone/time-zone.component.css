@@ -1,0 +1,44 @@
+.container-time-zone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+    padding: 5% 10% 2%;
+    background: #c8cac9;
+}
+
+
+.item__description {
+    font-size: 0.9rem;
+    color: #707774;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+.item__title {
+    margin-top: 1rem;
+    font-size: 2.3rem;
+    color: #1a1a1a;
+}
+
+
+.day-week {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+@media screen and (max-width: 1200px) {
+    .container-time-zone {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .item__description {
+        font-size: 0.6rem;
+    }
+
+    .item__title {
+        font-size: 1.7rem;
+    }
+}
