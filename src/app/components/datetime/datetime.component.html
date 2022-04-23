@@ -1,4 +1,4 @@
-<p class="message"><img src="../../../assets/icon-sun.svg" alt="Icon sun" class="message__icon"> 
+<p class="message"><img src="../../../assets/icon-sun.svg" alt="Icon sun" [class]="classListIcon"> 
     {{timeMessage | uppercase}}
 </p>
 <h1 class="time">{{time | date:'h:mm'}} <span class="time__day">{{time | date:'a'}}</span></h1>

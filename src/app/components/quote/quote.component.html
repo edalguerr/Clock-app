@@ -1,9 +1,14 @@
 <div class="container-quote">
     <div class="quote">
-        <p class="quote__text">"{{quote.text}}"</p>
+        <p class="quote__text">"{{quote.content}}"</p>
         <p class="quote__author">{{quote.author}}</p>
     </div>
     <button class="refresh-quote">
-        <img src="../../../assets/icon-refresh.svg" alt="icon refresh" class="refresh-quote__icon">
+        <img 
+            src="../../../assets/icon-refresh.svg" 
+            alt="icon refresh" 
+            class="refresh-quote__icon" 
+            (click)="refreshQuote()"
+        >
     </button>
 </div>

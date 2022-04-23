@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Quote } from 'src/app/interfaces/quote';
+import { QuotesService } from 'src/app/services/quotes.service';
 
 @Component({
   selector: 'app-quote',
@@ -6,19 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  quote: {
-    text: string,
-    author: string
-  }
+  quote:Quote;
 
-  constructor() {
+  constructor(private quoteService:QuotesService) { 
     this.quote = {
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel magnam dignissimos labore non.",
-      author: "Ada lovelace"
-    }
+      content: "",
+      author: ""
+    }   
   }
 
   ngOnInit(): void {
+    this.quoteService.quote.subscribe( (apiQuote:Quote) => {
+      this.quote = apiQuote;
+      console.log(apiQuote);
+    });
+  }
+
+
+  refreshQuote() {
+    this.quoteService.quote.subscribe( (apiQuote:Quote) => {
+      this.quote = apiQuote;
+      console.log(apiQuote);
+    });
   }
 
 }

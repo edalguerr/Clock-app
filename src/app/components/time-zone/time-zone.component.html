@@ -1,21 +1,21 @@
 <div class="container-time-zone">
     <div class="item">
         <p class="item__description">Current timezone</p>
-        <h3 class="item__title">{{ continente+"/"+pais }}</h3>
+        <h3 class="item__title">{{ timeData.timeZone }}</h3>
     </div>
 
     <div class="item">
         <p class="item__description">Day of the year</p>
-        <h3 class="item__title">{{dayOfYear}}</h3>
+        <h3 class="item__title">{{ timeData.dayYear }}</h3>
     </div>
 
     <div class="item day-week">
         <p class="item__description">Day of the week</p>
-        <h3 class="item__title">{{dayOfWeek}}</h3>
+        <h3 class="item__title">{{ timeData.dayWeek }}</h3>
     </div>
 
     <div class="item">
         <p class="item__description">Week number</p>
-        <h3 class="item__title">{{weekNumber}}</h3>
+        <h3 class="item__title">{{ timeData.weekNumber }}</h3>
     </div>
 </div>

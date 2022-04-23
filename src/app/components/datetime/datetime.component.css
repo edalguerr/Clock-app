@@ -21,7 +21,7 @@
 
 .message__icon--type_moon {
     content: url('../../../assets/icon-moon.svg');
-}
+} 
 
 .message__icon--type_sun {
     content: url('../../../assets/icon-sun.svg');

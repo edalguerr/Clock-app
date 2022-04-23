@@ -2,6 +2,7 @@
     display: grid;
     box-sizing: border-box;
     height: 103vh;
+    width: 100%;
     padding: 3% 10% 5%;
     grid-template: 1fr 1fr/ 70% 30%;
     position: fixed;
