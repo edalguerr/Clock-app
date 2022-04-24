@@ -6,6 +6,11 @@
     padding: 3% 10% 5%;
     grid-template: 1fr 1fr/ 70% 30%;
     position: fixed;
+    transition: transform 0.8s ease-in-out;
+}
+
+.main-container--show_more {
+    transform: translateY(-50vh);
 }
 
 .main-container::-webkit-scrollbar {
@@ -73,6 +78,11 @@
 .button-more__icon {
     height: 70%;
     transform: rotateZ(180deg);
+    transition: transform 0.9s ease-in-out;
+}
+
+.button-more__icon--orientation_up {
+    transform: rotateZ(0deg);
 }
 
 
@@ -89,7 +99,7 @@
 
     .main-container {
         grid-template-columns: 100%;
-    }
+    }    
 
     .bg-daytime {
         background: url('../assets/tablet/bg-image-daytime.jpg') center/cover no-repeat;
@@ -111,6 +121,11 @@
 
 
 @media screen and (max-width: 767px) {
+
+    .main-container--show_more {
+        transform: translateY(-45vh);
+    }
+
     .bg-daytime {
         background: url('../assets/mobile/bg-image-daytime.jpg') center/cover no-repeat;
     }

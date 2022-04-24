@@ -22,12 +22,12 @@ export class TimeZoneComponent implements OnInit {
       day_of_week,
       day_of_year,
       week_number,
-      timeZone
+      timezone
     }) => {
       this.timeData.dayWeek = apiData.day_of_week;
       this.timeData.dayYear = apiData.day_of_year;
       this.timeData.weekNumber = apiData.week_number;
-      this.timeData.timeZone = apiData.timeZone;
+      this.timeData.timeZone = apiData.timezone;
     });
   }
 

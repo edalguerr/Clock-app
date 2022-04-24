@@ -20,7 +20,6 @@ export class QuoteComponent implements OnInit {
   ngOnInit(): void {
     this.quoteService.quote.subscribe( (apiQuote:Quote) => {
       this.quote = apiQuote;
-      console.log(apiQuote);
     });
   }
 
@@ -28,7 +27,6 @@ export class QuoteComponent implements OnInit {
   refreshQuote() {
     this.quoteService.quote.subscribe( (apiQuote:Quote) => {
       this.quote = apiQuote;
-      console.log(apiQuote);
     });
   }
 

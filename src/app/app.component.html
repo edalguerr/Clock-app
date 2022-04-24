@@ -1,9 +1,9 @@
 <div [class]="classListBg"></div>
-<div class="main-container">
+<div [class]="classListMainContainer">
   <app-quote></app-quote>
-  <app-datetime class="datetime-component"></app-datetime>
-  <button class="button-more">
-    more <img src="../assets/icon-arrow-up.svg" alt="icon arrow" class="button-more__icon">
+  <app-datetime class="datetime-component" (newHour)="initBgTheme($event)"></app-datetime>
+  <button class="button-more" (click)="showMore()">
+    more <img src="../assets/icon-arrow-up.svg" alt="icon arrow" [class]="classListIconButton">
   </button>
   <app-time-zone class="time-zone"></app-time-zone>
 </div>

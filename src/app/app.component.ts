@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { TimeLocationService } from './services/time-location.service';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +8,13 @@ import { TimeLocationService } from './services/time-location.service';
 export class AppComponent implements OnInit {
   title = 'clockApp';
   classListBg = ["bg-daytime", "bg-time"];
-
-  constructor(private timeLocation: TimeLocationService) {
-        
-  }
+  classListMainContainer = ["main-container"];
+  classListIconButton = ["button-more__icon"];
 
   ngOnInit() {
 
-    this.timeLocation.time.subscribe( (apiData:{ datetime }) => {      
-      this.initBgTheme(new Date(apiData.datetime).getHours());
-    });
-
+    this.initBgTheme(new Date().getHours());
+    
   }
 
   initBgTheme(hour) {
@@ -28,5 +23,16 @@ export class AppComponent implements OnInit {
     } else {
       this.classListBg = ["bg-nighttime", "bg-time"];
     }
+  }
+
+  showMore() {
+    if (this.classListMainContainer.includes("main-container--show_more")){
+      this.classListMainContainer = ["main-container"];
+      this.classListIconButton = ["button-more__icon"];
+      return;
+    } 
+
+    this.classListMainContainer = ["main-container", "main-container--show_more"];  
+    this.classListIconButton = ["button-more__icon", "button-more__icon--orientation_up"];  
   }
 }

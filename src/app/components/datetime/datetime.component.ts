@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TimeLocationService } from 'src/app/services/time-location.service';
+
 
 @Component({
   selector: 'app-datetime',
@@ -7,8 +8,10 @@ import { TimeLocationService } from 'src/app/services/time-location.service';
   styleUrls: ['./datetime.component.css']
 })
 export class DatetimeComponent implements OnInit {
-  timeMessage: String;
+  @Output() newHour = new EventEmitter<number>();
+  timeMessage: String = "";
   time:Date = new Date();
+  hourBefore = this.time.getHours();
   ubication: String;
   classListIcon = ["message__icon", "message__icon--type_sun"];
 
@@ -22,10 +25,27 @@ export class DatetimeComponent implements OnInit {
       this.ubication = `In ${apiData.city}, ${apiData.country_code}`;
     });
 
-    this.timeLocation.time.subscribe( (apiData:{ datetime }) => {
-      this.time = apiData.datetime;
-      this.initTimeMessage(new Date(this.time).getHours());
-    });
+    this.initTimeMessage(new Date().getHours());
+    let interval = (60 - (new Date()).getSeconds()) * 1000 + 5;
+
+    setTimeout(()=>{
+
+      this.time = new Date();      
+      this.initTimeMessage(this.time.getHours());
+      console.log(this.time);
+      
+      setInterval(()=>{
+        this.time = new Date();      
+        this.initTimeMessage(this.time.getHours());      
+
+        if(this.hourBefore != this.time.getHours()){          
+          this.newHour.emit(this.time.getHours());
+        }
+
+      }, 60000);
+
+    }, interval);
+    
   }
 
   initTimeMessage(hours){    
