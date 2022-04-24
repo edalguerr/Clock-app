@@ -36,6 +36,7 @@
 
 .refresh-quote__icon {
     width: 15px;
+    content: url('../../../assets/icon-refresh.svg');
 }
 
 
